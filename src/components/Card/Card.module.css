@@ -4,9 +4,16 @@
 }
 
 .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 2px solid black;
   border-radius: 4px;
   width: 450px;
   margin-bottom: 10px;
   padding-left: 10px;
+}
+
+.btnDelete {
+  margin-right: 10px;
 }

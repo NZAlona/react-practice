@@ -6,8 +6,17 @@ export default function Card({ values }) {
       <ul className={css.list}>
         {values.map(({ id, name, username }) => (
           <li key={id} className={css.item}>
-            <p>Name: {name}</p>
-            <p>Surname: {username}</p>
+            <span>
+              {' '}
+              <p>Name: {name}</p>
+              <p>Surname: {username}</p>
+            </span>
+
+            <span>
+              <button type="button" className={css.btnDelete}>
+                Remove
+              </button>
+            </span>
           </li>
         ))}
       </ul>

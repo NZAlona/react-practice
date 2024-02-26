@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
-import css from './Forum.module.css';
+import css from './Form.module.css';
 
 export default function Form({ onAdd }) {
   const [userInput, setUserInput] = useState({
