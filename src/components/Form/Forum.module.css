@@ -1,0 +1,30 @@
+.label {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.form {
+  width: 600px;
+  height: 85px;
+  border: 1px solid black;
+  margin-left: 25px;
+  margin-top: 10px;
+  display: flex;
+}
+
+input {
+  width: 200px;
+  height: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.btn {
+  display: block;
+  width: 85px;
+  height: 35px;
+  margin-top: 25px;
+  margin-right: 65px;
+  /* margin: 0 auto; */
+}

@@ -1,19 +1,39 @@
 import './App.css';
+import css from '../src/App.module.css';
 import { data } from './data/users';
-import { User } from './components/User/User';
-import { Section } from './components/Section/Section';
-import { Address } from './components/Address/Address';
+import Card from './components/Card/Card';
+import { useState, useEffect } from 'react';
+import Form from './components/Form/Form';
 
-export const App = () => {
-  // console.log(data);
+const getLocaldata = () => {
+  const savedData = window.localStorage.getItem('save-card');
+
+  if (savedData !== null) {
+    return JSON.parse(savedData);
+  }
+  return data;
+};
+
+export default function App() {
+  const [newUser, setNewUser] = useState(getLocaldata());
+
+  useEffect(() => {
+    window.localStorage.setItem('save-card', JSON.stringify(newUser)), [newUser];
+  });
+
+  const handleNewUser = newCard => {
+    console.log(newCard);
+    setNewUser(currentDataCards => {
+      console.log(currentDataCards);
+      return [...currentDataCards, newCard];
+    });
+  };
+
   return (
     <>
-      <Section title="List of users">
-        <User user={data} />
-      </Section>
-      <Section title="List of addreses">
-        <Address street={data} />
-      </Section>
+      <h1 className={css.title}>List of current users</h1>
+      <Form onAdd={handleNewUser} />
+      <Card values={newUser} />
     </>
   );
-};
+}
